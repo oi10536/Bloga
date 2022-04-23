@@ -131,7 +131,7 @@ a:hover {
   float: right!important;
 }
 
-<!-- add css -->
+
 .alignright figcaption{
   text-align:center;
 }
@@ -151,7 +151,7 @@ entry-title{
   line-height:2rem;
 }  
 
-<!-- TEST -->
+
     a.a
   {
     padding:10px;
@@ -207,31 +207,31 @@ entry-title{
 
 @font-face {
  font-family:'f7qr63h45kh';
- src:url('7QR63h45Kh.woff') format('woff'),
- url('7QR63h45Kh.eot'),
- url('7QR63h45Kh.eot?#iefix') format('embedded-opentype'),
- url('7QR63h45Kh.ttf') format('truetype')
+ src:url(7QR63h45Kh.woff) format('woff'),
+ url(7QR63h45Kh.eot),
+ url(7QR63h45Kh.eot?#iefix) format('embedded-opentype'),
+ url(7QR63h45Kh.ttf) format('truetype')
 }
 @font-face {
  font-family:'f7qr63h465nj';
- src:url('7QR63h465nj.woff') format('woff'),
- url('7QR63h465nj.eot'),
- url('7QR63h465nj.eot?#iefix') format('embedded-opentype'),
- url('7QR63h465nj.ttf') format('truetype')
+ src:url(7QR63h465nj.woff) format('woff'),
+ url(7QR63h465nj.eot),
+ url(7QR63h465nj.eot?#iefix) format('embedded-opentype'),
+ url(7QR63h465nj.ttf) format('truetype')
 }
 @font-face {
  font-family:'f7qr63h474xp';
- src:url('7QR63h474xp.woff') format('woff'),
- url('7QR63h474xp.eot'),
- url('7QR63h474xp.eot?#iefix') format('embedded-opentype'),
- url('7QR63h474xp.ttf') format('truetype')
+ src:url(7QR63h474xp.woff) format('woff'),
+ url(7QR63h474xp.eot),
+ url(7QR63h474xp.eot?#iefix) format('embedded-opentype'),
+ url(7QR63h474xp.ttf) format('truetype')
 }
 @font-face {
  font-family:'f7qr63h48g2';
- src:url('7QR63h48G2.woff') format('woff'),
- url('7QR63h48G2.eot'),
- url('7QR63h48G2.eot?#iefix') format('embedded-opentype'),
- url('7QR63h48G2.ttf') format('truetype')
+ src:url(7QR63h48G2.woff) format('woff'),
+ url(7QR63h48G2.eot),
+ url(7QR63h48G2.eot?#iefix) format('embedded-opentype'),
+ url(7QR63h48G2.ttf) format('truetype')
 }
 @font-face {
  font-family:'f7qr63h495fz';
