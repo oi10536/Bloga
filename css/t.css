@@ -3,4 +3,13 @@
   src: url("/fonts/d.woff") format("woff");
 }
 
-.read-d{font-family: TH Sarabun New!important;text-indent: 1.8em;padding: 15px; font-size: 20px;line-height: 1.8em;}
+.read-d{font-family: TH Sarabun New!important;text-indent: 1.8em;padding: 15px; font-size: 24px;clear: right;}
+
+@font-face {
+  font-family: "ReadingNovel";
+  font-weight: 100 900;
+  font-style: normal italic;
+  src: url("/fonts/z.ttf") format("ttf");
+}
+.read-za{font-family: ReadingNovel!important;text-indent: 1.8em;padding: 15px; font-size: 20px;clear: right;}
+
