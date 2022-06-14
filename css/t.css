@@ -1,9 +1,11 @@
 @font-face {
   font-family: "TH Sarabun New";
+  font-weight: 100 900;
+  font-style: normal italic;
   src: url("/fonts/d.woff") format("woff");
 }
 
-.read-d{font-family: TH Sarabun New!important;text-indent: 1.8em;padding: 15px; font-size: 24px;clear: right;}
+.read-d{font-family: TH Sarabun New!important;text-indent: 1.8em;padding: 15px; font-size: 28px;clear: right;}
 
 @font-face {
   font-family: "ReadingNovel";
