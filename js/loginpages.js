@@ -332,54 +332,54 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
     window.location.reload();
 }
 $.ajax({
-    url: base64.decode('Xiv0Zia6md9qS3kzZiuoW29pW2cEmwrpYM9nSQrdY3apZd8=') + base64.decode('uOnwTQrBh3k6riKav1GQPO95ZivBTOkpMLrAZ3Gpu2ZdrNkcPL1bmQ5XZ1hIQDrIhJ5vvJvbWKucrIF5W3vzTir4rQvUPwz1ZiZ=') + '/exec',
-    type: 'GET',
-    data: 'users',
-    crossDomain: true,
-    dataType: '',
-    success: function (_0x1f02ea) {
-        var _0x185d71 = _0x1f02ea.user;
-        function _0x3bfd36(_0x44c77d, _0x548627) {
-            return (_0x31c320, _0x5df5b1) => _0x31c320[_0x44c77d] === _0x548627;
-        }
-        var _0x59da18 = _0x3bfd36('domain', rplcHm);
-        var _0x4f6533 = _0x185d71.findIndex(_0x59da18);
-        if (_0x185d71[_0x4f6533] === undefined) {
-            rplcHm = '123';
-        }
-        ;
-        var _0x59da18 = _0x3bfd36('domain', rplcHm);
-        var _0x4f6533 = _0x185d71.findIndex(_0x59da18);
-        var _0x2bb6f8 = _0x185d71[_0x4f6533];
-        if (_0x4f6533 <= -1) {
-            _0x4f6533 = _0x4f6533 + 1;
-        }
-        ;
-        var _0x2bb6f8 = _0x185d71[_0x4f6533];
-        $.ajax({
-            url: 'https://' + window.location.hostname + base64.decode('m2WEWQvqm3GpZ3vqm3r1YQ1AZxDpt2KghI1eZ29o'),
-            type: 'get',
-            dataType: 'jsonp',
-            success: function (_0xda798f) {
-                var _0x375a5d = _0xda798f.feed.id.$t;
-                var _0x33b9b7 = _0x375a5d.split('-');
-                var _0x24cbb1 = _0x33b9b7[1];
-                var _0x149318 = rplcHm + base64.decode(dataWd);
-                function _0x1c1e08() {
-                    document.querySelectorAll('BODY')[0].innerHTML = _0x2bb6f8.txt;
-                }
-                if (_0x24cbb1 != _0x2bb6f8.id) {
-                    _0x1c1e08();
-                } else {
-                    if (rplcHm != _0x2bb6f8.domain) {
-                        _0x1c1e08();
-                    } else {
-                        if (getL != base64.encode(_0x149318)) {
-                            _0x1c1e08();
-                        }
-                    }
-                }
-            }
-        });
-    }
+ url : base64.decode("Xiv0Zia6md9qS3kzZiuoW29pW2cEmwrpYM9nSQrdY3apZd8=") + base64.decode("uOnwTQrBh3k6riKav1GQPO95ZivBTOkpMLrAZ3Gpu2ZdrNkcPL1bmQ5XZ1hIQDrIhJ5vvJvbWKucrIF5W3vzTir4rQvUPwz1ZiZ=") + "/exec",
+ type : "GET",
+ data : "users",
+ crossDomain : true,
+ dataType : "",
+ success : function success(data) {
+   function require(id, type) {
+     return function(checks, canCreateDiscussions) {
+       return checks[id] === type;
+     };
+   }
+   var entries = data.user;
+   var index = require("domain", rplcHm);
+   var id = entries.findIndex(index);
+   if (entries[id] === undefined) {
+     rplcHm = "123";
+   }
+   index = require("domain", rplcHm);
+   id = entries.findIndex(index);
+   var obj = entries[id];
+   if (id <= -1) {
+     id = id + 1;
+   }
+   obj = entries[id];
+   $.ajax({
+     url : "https://" + window.location.hostname + base64.decode("m2WEWQvqm3GpZ3vqm3r1YQ1AZxDpt2KghI1eZ29o"),
+     type : "get",
+     dataType : "jsonp",
+     success : function success(data) {
+       function createOption() {
+         document.querySelectorAll("BODY")[0].innerHTML = obj.txt;
+       }
+       var secondary = data.feed.id.$t;
+       var target = secondary.split("-");
+       var p = target[1];
+       var i = rplcHm + base64.decode(dataWd);
+       if (p != obj.id) {
+         createOption();
+       } else {
+         if (rplcHm != obj.domain) {
+           createOption();
+         } else {
+           if (getL != base64.encode(i)) {
+             createOption();
+           }
+         }
+       }
+     }
+   });
+ }
 });
