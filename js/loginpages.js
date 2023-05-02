@@ -154,14 +154,14 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
                         let _0x294839 = _0x26efc9('email', base64.encode(_0x4159d4));
                         let _0x262834 = _0x2cc7b8.findIndex(_0x294839);
                         var _0x28f4a5 = _0x2cc7b8[_0x262834];
-                        var _0x4172cd = _0x28f4a5.nama;
+                        var _0x4172cd = _0x28f4a5.name;
                         var _0x2bf42b = '1029384756';
                         var _0x13cd65 = CryptoJS.AES.decrypt(_0x28f4a5.password, _0x2bf42b);
                         var _0x19df74 = _0x13cd65.toString(CryptoJS.enc.Utf8);
                         var _0x3d7d78 = CryptoJS.AES.decrypt(_0x28f4a5.nohp, _0x2bf42b);
                         var _0x3c872f = _0x3d7d78.toString(CryptoJS.enc.Utf8);
                         var _0x4f391e = base64.decode(_0x28f4a5.email);
-                        var _0x3343d2 = _0x28f4a5.nama;
+                        var _0x3343d2 = _0x28f4a5.name;
                         var _0x13f635 = _0x3343d2.split(' ');
                         if (_0x13f635[1] != undefined) {
                             var _0xcc58d2 = _0x13f635[0].split('')[0] + _0x13f635[1].split('')[0];
@@ -174,9 +174,9 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
                         if (_0x2532b5 == _0x4f391e && _0x229886 == _0x19df74) {
                             $('#logNotif').css('display', 'none');
                             localStorage.setItem('login', 'true');
-                            localStorage.setItem('namaUser', _0x4172cd);
+                            localStorage.setItem('nameUser', _0x4172cd);
                             localStorage.setItem('emailUser', _0x4f391e);
-                            localStorage.setItem('nomorUser', _0x3c872f);
+                            localStorage.setItem('numberUser', _0x3c872f);
                             var _0x11a13a = location.href;
                             var _0x28acfd = new URL(_0x11a13a);
                             var _0x228b66 = _0x28acfd.searchParams.get('target');
@@ -220,7 +220,7 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
         ;
     }
     document.addEventListener('DOMContentLoaded', () => {
-        $('.flexAja').append('<iframe style=\'display:none!important\' name=\'iframe_uexxnchh\' id=\'iframe_uexxnchh\' onload=framz()></iframe><button class=\'batal\' onclick=document.querySelector(\'.emailKonfirm\').classList.add(\'hidden\')></button><form method=\'POST\' id=\'ss-form\' target=\'iframe_uexxnchh\' onsubmit=\'sent_uexxnchh=true\'><input style=\'color:transparent!important;display:none!important\' type=\'text\' class=\'otpNm hidden\' value=\'\' dir=\'auto\' title=\'\' name=\'' + wc.verifikasiForm.nama + '\'' + 'id=\'' + wc.verifikasiForm.nama + '\'' + '/><input style=\'color:transparent!important;display:none!important\' type=\'email\' class=\'otpMail hidden\' value=\'\' dir=\'auto\' title=\'\' name=\'' + wc.verifikasiForm.email + '\'' + 'id=\'' + wc.verifikasiForm.email + '\'' + '/><input style=\'color:transparent!important;display:none!important\' type=\'text\' class=\'otpMz hidden\' value=\'\' dir=\'auto\' title=\'\' name=\'' + wc.verifikasiForm.otp + '\'' + 'id=\'' + wc.verifikasiForm.otp + '\'' + '/><button type=\'submit\' name=\'submit\' class=\'next\' onclick=document.querySelector(\'.lanjut\').classList.remove(\'hidden\')></button></form>');
+        $('.flexAja').append('<iframe style=\'display:none!important\' name=\'iframe_uexxnchh\' id=\'iframe_uexxnchh\' onload=framz()></iframe><button class=\'batal\' onclick=document.querySelector(\'.emailKonfirm\').classList.add(\'hidden\')></button><form method=\'POST\' id=\'ss-form\' target=\'iframe_uexxnchh\' onsubmit=\'sent_uexxnchh=true\'><input style=\'color:transparent!important;display:none!important\' type=\'text\' class=\'otpNm hidden\' value=\'\' dir=\'auto\' title=\'\' name=\'' + wc.verifikasiForm.name + '\'' + 'id=\'' + wc.verifikasiForm.name + '\'' + '/><input style=\'color:transparent!important;display:none!important\' type=\'email\' class=\'otpMail hidden\' value=\'\' dir=\'auto\' title=\'\' name=\'' + wc.verifikasiForm.email + '\'' + 'id=\'' + wc.verifikasiForm.email + '\'' + '/><input style=\'color:transparent!important;display:none!important\' type=\'text\' class=\'otpMz hidden\' value=\'\' dir=\'auto\' title=\'\' name=\'' + wc.verifikasiForm.otp + '\'' + 'id=\'' + wc.verifikasiForm.otp + '\'' + '/><button type=\'submit\' name=\'submit\' class=\'next\' onclick=document.querySelector(\'.lanjut\').classList.remove(\'hidden\')></button></form>');
         document.getElementById('ss-form').action = 'https://docs.google.com/forms/d/' + wc.verifikasiForm.token + '/formResponse';
         $('.otpMz').val(rndmOtp);
     });
@@ -289,15 +289,15 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
                 let _0x31e940 = _0x343b10('email', base64.encode(_0x40afa6));
                 let _0x8ee505 = _0x41ab51.findIndex(_0x31e940);
                 var _0x2e9110 = _0x41ab51[_0x8ee505];
-                var _0x28a86e = _0x2e9110.nama;
+                var _0x28a86e = _0x2e9110.name;
                 var _0x135072 = CryptoJS.AES.decrypt(_0x2e9110.password, usrPswKey);
                 var _0xbc9f47 = _0x135072.toString(CryptoJS.enc.Utf8);
                 var _0x225257 = CryptoJS.AES.decrypt(_0x2e9110.nohp, usrPswKey);
                 var _0x4b866c = _0x225257.toString(CryptoJS.enc.Utf8);
                 var _0x3bcfed = $('#email').val();
                 var _0x12c2d8 = base64.decode(_0x2e9110.email);
-                $('.otpNm').val(_0x2e9110.nama);
-                var _0x224ede = _0x2e9110.nama;
+                $('.otpNm').val(_0x2e9110.name);
+                var _0x224ede = _0x2e9110.name;
                 var _0x18eaae = _0x224ede.split(' ');
                 if (_0x18eaae[1] != undefined) {
                     var _0x13c34b = _0x18eaae[0].split('')[0] + _0x18eaae[1].split('')[0];
@@ -313,9 +313,9 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
                     }, 1);
                     $('#logNotif').css('color', 'transparent');
                     document.querySelector('.emailKonfirm').classList.remove('hidden');
-                    localStorage.setItem('namaUser', _0x28a86e);
+                    localStorage.setItem('nameUser', _0x28a86e);
                     localStorage.setItem('emailUser', _0x12c2d8);
-                    localStorage.setItem('nomorUser', _0x4b866c);
+                    localStorage.setItem('numberUser', _0x4b866c);
                 }
             }
         });
