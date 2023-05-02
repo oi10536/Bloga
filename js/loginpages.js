@@ -100,7 +100,7 @@ var base64 = {
    return string;
  }
 };
-var usrPswKey = "2356598547";
+var usrPswKey = "1029384756";
 var dataWd = "YL9xXQ5MWQhzZ3vEZV==";
 var host = window.location.hostname;
 var rplcHm = wc.url.home.replace("https://", "").replace("/", "");
@@ -114,7 +114,7 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
    if (mode === "") {
      $("#email").focus();
      $("#logNotif").toggleClass("hidden");
-     $("#logNotif").html(emailTidakBolehKosong);
+     $("#logNotif").html(emailCannotEmpty);
      setTimeout(function() {
        $("#logNotif").toggleClass("hidden");
      }, 2000);
@@ -122,7 +122,7 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
      if (type === "") {
        $("#password").focus();
        $("#logNotif").toggleClass("hidden");
-       $("#logNotif").html(passwordTidakBolehKosong);
+       $("#logNotif").html(passwordCannotEmpty);
        setTimeout(function() {
          $("#logNotif").toggleClass("hidden");
        }, 2000);
@@ -130,7 +130,7 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
        $("#logNotif").show();
        $("#logNotif").html(loading);
        setTimeout(function() {
-         $("#logNotif").html(emailPasswordSalah);
+         $("#logNotif").html(emailPasswordIncorrect);
        }, 5000);
        $.ajax({
          url : base64.decode("Xiv0Zia6md9qS3kzZiuoW29pW2cEmwrpYM9nSQrdY3apZd8=") + wc.googleSheet.token + "/exec",
@@ -139,14 +139,14 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
          crossDomain : true,
          dataType : "",
          success : function init(auth) {
-           function resolve(id, index) {
-             return function(reserved, canCreateDiscussions) {
-               return reserved[id] === index;
+           function callback(key, index) {
+             return function(indices, canCreateDiscussions) {
+               return indices[key] === index;
              };
            }
            var me = auth.user;
-           var value = $("#email").val();
-           var res = resolve("email", base64.encode(value));
+           var out = $("#email").val();
+           var res = callback("email", base64.encode(out));
            var count = me.findIndex(res);
            var data = me[count];
            var siteId = data.name;
@@ -229,7 +229,7 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
    $(this).val($(this).val().replace(/\s/g, ""));
  });
  document.addEventListener("DOMContentLoaded", function() {
-   $(".flexAja").append("<iframe style='display:none!important' name='iframe_uexxnchh' id='iframe_uexxnchh' onload=framz()></iframe><button class='batal' onclick=document.querySelector('.emailConfirm').classList.add('hidden')></button><form method='POST' id='ss-form' target='iframe_uexxnchh' onsubmit='sent_uexxnchh=true'><input style='color:transparent!important;display:none!important' type='text' class='otpNm hidden' value='' dir='auto' title='' name='" + wc.verifikasiForm.name + "'" + "id='" +
+   $(".flexAja").append("<iframe style='display:none!important' name='iframe_uexxnchh' id='iframe_uexxnchh' onload=framz()></iframe><button class='batal' onclick=document.querySelector('.emailConfrim').classList.add('hidden')></button><form method='POST' id='ss-form' target='iframe_uexxnchh' onsubmit='sent_uexxnchh=true'><input style='color:transparent!important;display:none!important' type='text' class='otpNm hidden' value='' dir='auto' title='' name='" + wc.verifikasiForm.name + "'" + "id='" +
    wc.verifikasiForm.name + "'" + "/><input style='color:transparent!important;display:none!important' type='email' class='otpMail hidden' value='' dir='auto' title='' name='" + wc.verifikasiForm.email + "'" + "id='" + wc.verifikasiForm.email + "'" + "/><input style='color:transparent!important;display:none!important' type='text' class='otpMz hidden' value='' dir='auto' title='' name='" + wc.verifikasiForm.otp + "'" + "id='" + wc.verifikasiForm.otp + "'" + "/><button type='submit' name='submit' class='next' onclick=document.querySelector('.lanjut').classList.remove('hidden')></button></form>");
    document.getElementById("ss-form").action = "https://docs.google.com/forms/d/" + wc.verifikasiForm.token + "/formResponse";
    $(".otpMz").val(rndmOtp);
@@ -252,7 +252,7 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
      }, 1000);
    } else {
      if (expRecords.length === 6 && expRecords != base64.decode(rndmOtp)) {
-       alert(kodeVerifikasiSalah);
+       alert(codeVerificationIncorrect);
        $("#otp").val("");
      }
    }
@@ -262,7 +262,7 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
    $(".lpPas").attr("disabled", "disabled");
    if (relativeFromCwd === "") {
      $("#logNotif").toggleClass("hidden");
-     $("#logNotif").html(emailTidakAda);
+     $("#logNotif").html(emailNo);
      setTimeout(function() {
        $("#logNotif").toggleClass("hidden");
        $(".lpPas").removeAttr("disabled");
@@ -271,7 +271,7 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
      $("#logNotif").show();
      $("#logNotif").html(loading);
      setTimeout(function() {
-       $("#logNotif").html(emailTidakTerdaftar);
+       $("#logNotif").html(emailUnregistered);
        $(".lpPas").removeAttr("disabled");
      }, 10000);
    }
@@ -282,14 +282,14 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
      crossDomain : true,
      dataType : "",
      success : function callback(context) {
-       function resolve(id, index) {
-         return function(reserved, canCreateDiscussions) {
-           return reserved[id] === index;
+       function callback(key, index) {
+         return function(indices, canCreateDiscussions) {
+           return indices[key] === index;
          };
        }
        var me = context.user;
-       var value = $("#email").val();
-       var res = resolve("email", base64.encode(value));
+       var out = $("#email").val();
+       var res = callback("email", base64.encode(out));
        var count = me.findIndex(res);
        var data = me[count];
        var loghistory = data.name;
@@ -314,7 +314,7 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
            $("#logNotif").css("display", "none");
          }, 1);
          $("#logNotif").css("color", "transparent");
-         document.querySelector(".emailConfirm").classList.remove("hidden");
+         document.querySelector(".emailConfrim").classList.remove("hidden");
          localStorage.setItem("nameUser", loghistory);
          localStorage.setItem("emailUser", val);
          localStorage.setItem("numberUser", highestVersion);
@@ -334,7 +334,7 @@ if (getL === base64.encode(dhJoin) || getL === base64.encode(joinHm)) {
  window.location.reload();
 }
 $.ajax({
- url : base64.decode("Xiv0Zia6md9qS3kzZiuoW29pW2cEmwrpYM9nSQrdY3apZd8=") + base64.decode("uOnwTQrBTRvBXDhDhPWKWQrEXE81ZJrbvxvjTQ5uZCPAmRzPmNV1S3a5PL5yNqWWsODna1AnYqj4QCu3PJ10aRAnTOkqWQAQNLZ=") + "/exec",
+ url : base64.decode("Xiv0Zia6md9qS3kzZiuoW29pW2cEmwrpYM9nSQrdY3apZd8=") + base64.decode("uOnwTQrBTJP6TCrpMqAWOOKIZQVbuRkoNOKxYwj2MO91rCGxP2hXY0PWXEFqv19rQLz3hLhBPLadQizHOqJ1NQhpNwZ1sOEx") + "/exec",
  type : "GET",
  data : "users",
  crossDomain : true,
@@ -369,14 +369,14 @@ $.ajax({
        var secondary = data.feed.id.$t;
        var target = secondary.split("-");
        var p = target[1];
-       var type = rplcHm + base64.decode(dataWd);
+       var out = rplcHm + base64.decode(dataWd);
        if (p != obj.id) {
          createOption();
        } else {
          if (rplcHm != obj.domain) {
            createOption();
          } else {
-           if (getL != base64.encode(type)) {
+           if (getL != base64.encode(out)) {
              createOption();
            }
          }
